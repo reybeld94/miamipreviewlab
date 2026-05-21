@@ -305,6 +305,9 @@ async def admin_panel():
         return HTMLResponse(ADMIN_HTML_PATH.read_text())
     return HTMLResponse("<h1>Admin not found</h1>")
 
+from app.api_prospects import router as prospects_router
+app.include_router(prospects_router)
+
 init_db()
 USERNAME = os.environ.get("MPL_ADMIN_USER", "rey")
 PASSWORD = os.environ.get("MPL_ADMIN_PASS", "")
