@@ -15,43 +15,92 @@ body{font-family:system-ui;background:#0a0a0a;color:#e5e5e5}
 .login-box button:hover{background:#6ee7a0}
 .login-err{color:#f87171;text-align:center;margin-bottom:.5rem;min-height:1.5rem}
 .layout{display:flex;min-height:100vh}
-.sidebar{width:220px;background:#111;padding:1.5rem;border-right:1px solid #1a1a1a}
+.sidebar{width:220px;background:#111;padding:1.5rem;border-right:1px solid #1a1a1a;display:flex;flex-direction:column;flex-shrink:0}
 .sidebar h2{color:#4ade80;font-size:1.1rem;margin-bottom:1.5rem}
+.sidebar-nav{flex:1}
 .sidebar a{color:#a3a3a3;text-decoration:none;padding:.4rem .6rem;border-radius:6px;display:block;margin-bottom:.25rem}
 .sidebar a:hover,.sidebar a.on{background:#1a2e1a;color:#4ade80}
-.content{flex:1;padding:2rem}
-.stats{display:flex;gap:1rem;margin-bottom:2rem}
-.stat{background:#111;padding:1rem 1.5rem;border-radius:8px;text-align:center;flex:1}
+.content{flex:1;padding:2rem;overflow-x:auto}
+.stats{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.stat{background:#111;padding:1rem 1.5rem;border-radius:8px;text-align:center;flex:1;min-width:100px}
 .stat-num{font-size:2rem;font-weight:bold;color:#4ade80}
 .stat-lbl{color:#a3a3a3;font-size:.8rem}
-table{width:100%;border-collapse:collapse;margin-top:1rem}
-th,td{padding:.7rem;text-align:left;border-bottom:1px solid #1a1a1a}
-th{color:#a3a3a3;font-size:.75rem;text-transform:uppercase}
-tr:hover{background:#111}
-.badge{padding:.2rem .6rem;border-radius:12px;font-size:.7rem;font-weight:600;text-transform:uppercase}
-.bdraft{background:#333;color:#999}.bpublished{background:#064e3b;color:#4ade80}
-.bcontacted{background:#1e3a5f;color:#60a5fa}.bresponded{background:#5b21b6;color:#c084fc}
+table{width:100%;border-collapse:collapse;margin-top:.5rem}
+th,td{padding:.6rem .7rem;text-align:left;border-bottom:1px solid #1a1a1a;font-size:.85rem}
+th{color:#a3a3a3;font-size:.72rem;text-transform:uppercase}
+tr:hover td{background:#0d0d0d}
+/* Demo status badges */
+.badge{padding:.2rem .6rem;border-radius:12px;font-size:.7rem;font-weight:600;text-transform:uppercase;white-space:nowrap}
+.bdraft{background:#333;color:#999}
+.bpublished{background:#064e3b;color:#4ade80}
+.bcontacted{background:#1e3a5f;color:#60a5fa}
+.bresponded{background:#5b21b6;color:#c084fc}
 .barchived{background:#7f1d1d;color:#f87171}
+/* Prospect status badges */
+.bdiscovered{background:#2a2a2a;color:#888}
+.breviewed{background:#1a2a3a;color:#7dd3fc}
+.bshortlisted{background:#3d2d00;color:#fbbf24}
+.bdemo_built{background:#2d1a4a;color:#c084fc}
+.bno_response{background:#2a1a0a;color:#fb923c}
+.bwon{background:#052e16;color:#86efac}
+.blast{background:#4a0000;color:#fca5a5}
+.brejected{background:#1a0000;color:#ef4444}
+.bblacklisted{background:#111;color:#555}
+/* Buttons */
 .btn{padding:.35rem .7rem;border-radius:5px;border:none;cursor:pointer;font-size:.75rem;font-weight:600;margin-right:.2rem;text-decoration:none;display:inline-block}
-.btn-pub{background:#4ade80;color:#000}.btn-arc{background:#f87171;color:#fff}
-.btn-res{background:#60a5fa;color:#000}.btn-del{background:#dc2626;color:#fff}
-.btn-note{background:#333;color:#a3a3a3}.btn-cta{background:#4ade80;color:#000}
+.btn-pub{background:#4ade80;color:#000}
+.btn-arc{background:#f87171;color:#fff}
+.btn-res{background:#60a5fa;color:#000}
+.btn-del{background:#dc2626;color:#fff}
+.btn-note{background:#333;color:#a3a3a3}
+.btn-cta{background:#4ade80;color:#000}
 .btn-big{background:#4ade80;color:#000;padding:.7rem 1.5rem;border:none;border-radius:8px;font-weight:bold;cursor:pointer;font-size:1rem}
+/* Forms */
 form label{display:block;color:#a3a3a3;margin-bottom:.3rem;font-size:.85rem}
 form input,form textarea{width:100%;padding:.7rem;margin-bottom:1rem;background:#0a0a0a;border:1px solid #333;border-radius:6px;color:#e5e5e5;font-size:.9rem}
 form textarea{min-height:80px;resize:vertical}
-.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
-.df label{color:#a3a3a3;font-size:.75rem}.df div{padding:.3rem 0}
-.notes-box{background:#111;padding:1rem;border-radius:8px;white-space:pre-wrap;color:#a3a3a3;margin:1rem 0}
-.toast{position:fixed;bottom:1rem;right:1rem;background:#064e3b;color:#4ade80;padding:1rem 1.5rem;border-radius:8px;z-index:999;display:none}
+/* Detail grid */
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:.75rem 0}
+.df label{color:#a3a3a3;font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:.15rem}
+.df div{font-size:.88rem}
+.notes-box{background:#111;padding:1rem;border-radius:8px;white-space:pre-wrap;color:#a3a3a3;margin:.5rem 0;font-size:.85rem}
+/* Toast */
+.toast{position:fixed;bottom:1rem;right:1rem;background:#064e3b;color:#4ade80;padding:.8rem 1.2rem;border-radius:8px;z-index:999;display:none;font-size:.9rem}
+/* Score colors */
+.score-hi{color:#4ade80;font-weight:700}
+.score-md{color:#fbbf24;font-weight:700}
+.score-lo{color:#6b7280}
+/* Filter bar */
+.filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.25rem;align-items:center}
+.filter-bar select,.filter-bar input{background:#111;border:1px solid #2a2a2a;color:#e5e5e5;padding:.38rem .6rem;border-radius:6px;font-size:.82rem}
+.filter-bar button{background:#333;color:#e5e5e5;border:none;border-radius:6px;padding:.38rem .9rem;cursor:pointer;font-size:.82rem;font-weight:600}
+.filter-bar button:hover{background:#4ade80;color:#000}
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.87);z-index:200;overflow-y:auto;padding:1.5rem}
+.modal-box{background:#111;max-width:760px;margin:0 auto;border-radius:12px;padding:2rem;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:#555;font-size:1.4rem;cursor:pointer;line-height:1}
+.modal-close:hover{color:#e5e5e5}
+/* Metric cards */
+.metric-cards{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:1.5rem}
+.metric-card{background:#111;padding:.75rem 1.1rem;border-radius:8px;text-align:center;min-width:110px}
+.mc-num{font-size:1.6rem;font-weight:bold;color:#4ade80}
+.mc-lbl{color:#a3a3a3;font-size:.72rem;text-transform:uppercase;margin-top:.2rem}
+.mc-zero .mc-num{color:#333}
+.mc-zero .mc-lbl{color:#333}
+/* Info chips */
+.chip-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0}
+.chip{background:#0d0d0d;border:1px solid #222;border-radius:6px;padding:.25rem .55rem;font-size:.75rem}
+.chip span{color:#555}
+.chip strong{color:#c5c5c5}
 </style>
 </head>
 <body>
 <div id="app"></div>
 <script>
-// Auth
+// ── Auth ──────────────────────────────────────────────────────────────────────
 const TK = "mpl_tk";
 var token = localStorage.getItem(TK);
+var prospectsTimer = null;
 
 function api(url, opts) {
     opts = opts || {};
@@ -61,13 +110,13 @@ function api(url, opts) {
         hdrs["Content-Type"] = "application/json";
         opts.body = JSON.stringify(opts.body);
     }
-    return fetch(url, {method:opts.method||"GET", headers:hdrs, body:opts.body})
+    return fetch(url, {method: opts.method || "GET", headers: hdrs, body: opts.body})
         .then(function(r) { if (!r.ok) throw r; return r.json(); });
 }
 
 function logout() { localStorage.removeItem(TK); token = null; showLogin(); }
 
-// Toast
+// ── Toast ─────────────────────────────────────────────────────────────────────
 function toast(msg) {
     var t = document.createElement("div");
     t.className = "toast"; t.textContent = msg; t.style.display = "block";
@@ -75,29 +124,86 @@ function toast(msg) {
     setTimeout(function() { t.remove(); }, 2500);
 }
 
-// Hash router
+// ── XSS escape ────────────────────────────────────────────────────────────────
+function esc(s) {
+    return (s == null ? "" : String(s))
+        .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+// ── Prospect helpers ──────────────────────────────────────────────────────────
+const TRANSITIONS = {
+    "discovered":  ["reviewed","shortlisted","blacklisted"],
+    "reviewed":    ["shortlisted","rejected","blacklisted"],
+    "shortlisted": ["demo_built","rejected","blacklisted"],
+    "demo_built":  ["contacted"],
+    "contacted":   ["responded","no_response"],
+    "responded":   ["won","lost"]
+};
+
+function pScore(s) {
+    if (s === null || s === undefined) return '<span class="score-lo">–</span>';
+    var cls = s >= 75 ? "score-hi" : s >= 50 ? "score-md" : "score-lo";
+    return '<span class="' + cls + '">' + s + '</span>';
+}
+
+function boolStr(v) {
+    return (v === null || v === undefined) ? "–" : (v ? "✓" : "✗");
+}
+
+function dfRow(label, valHtml) {
+    return '<div class="df"><label>' + esc(label) + '</label><div>' + valHtml + '</div></div>';
+}
+
+function chip(label, val) {
+    return '<div class="chip"><span>' + esc(label) + ' </span><strong>' + esc(val) + '</strong></div>';
+}
+
+// ── Hash router ───────────────────────────────────────────────────────────────
 function route() {
+    clearInterval(prospectsTimer);
     var h = location.hash.slice(1) || "dashboard";
     if (!token) return showLogin();
     api("/api/auth/me").then(function() {
-        if (h === "dashboard") showDash();
-        else if (h === "demos") showDemos();
-        else if (h === "new") showNew();
+        if      (h === "dashboard") showDash();
+        else if (h === "demos")     showDemos();
+        else if (h === "new")       showNew();
         else if (h.startsWith("demo/")) showDetail(h.split("/")[1]);
+        else if (h === "prospects") showProspects({});
+        else if (h === "runs")      showRuns();
+        else if (h === "metrics")   showMetrics();
         else showDash();
     }).catch(function() { logout(); });
 }
 
-// Login
+// ── Layout shell ──────────────────────────────────────────────────────────────
+function shell(title, bodyHtml, currentTab) {
+    var tabs = {
+        "dashboard": "📊 Dashboard",
+        "demos":     "🎯 Demos",
+        "new":       "➕ Nueva Demo",
+        "prospects": "🔍 Prospects",
+        "runs":      "🤖 Runs",
+        "metrics":   "📈 Métricas"
+    };
+    var nav = "<div class='sidebar'><h2>🌴 MPL Admin</h2><div class='sidebar-nav'>";
+    Object.keys(tabs).forEach(function(k) {
+        nav += "<a href='#" + k + "' class='" + (currentTab === k ? "on" : "") + "'>" + tabs[k] + "</a>";
+    });
+    nav += "</div><a href='#' onclick='logout()' style='color:#555;font-size:.82rem'>🚪 Salir</a></div>";
+    document.getElementById("app").innerHTML =
+        "<div class='layout'>" + nav + "<div class='content'><h2 style='margin-bottom:1.5rem'>" + title + "</h2>" + bodyHtml + "</div></div>";
+}
+
+// ── Login ─────────────────────────────────────────────────────────────────────
 function showLogin(msg) {
     document.getElementById("app").innerHTML =
-    '<div class="login-page"><div class="login-box">'+
-    '<h1>🌴 MPL Admin</h1>'+
-    '<div class="login-err">'+(msg||"")+'</div>'+
-    '<input id="lu" placeholder="Usuario" autofocus>'+
-    '<input id="lp" type="password" placeholder="Contraseña">'+
-    '<button onclick="doLogin()">Entrar</button>'+
-    '</div></div>';
+        '<div class="login-page"><div class="login-box">' +
+        '<h1>🌴 MPL Admin</h1>' +
+        '<div class="login-err">' + (msg || "") + '</div>' +
+        '<input id="lu" placeholder="Usuario" autofocus>' +
+        '<input id="lp" type="password" placeholder="Contraseña">' +
+        '<button onclick="doLogin()">Entrar</button>' +
+        '</div></div>';
     document.getElementById("lp").addEventListener("keydown", function(e) {
         if (e.key === "Enter") doLogin();
     });
@@ -107,85 +213,74 @@ function doLogin() {
     var u = document.getElementById("lu").value;
     var p = document.getElementById("lp").value;
     var fd = new FormData(); fd.append("username", u); fd.append("password", p);
-    fetch("/api/auth/login", {method:"POST", body:fd}).then(function(r) {
+    fetch("/api/auth/login", {method: "POST", body: fd}).then(function(r) {
         if (!r.ok) throw r;
         return r.json();
     }).then(function(d) {
         token = d.access_token;
         localStorage.setItem(TK, token);
         route();
-    }).catch(function() { showLogin("Credenciales invalidas"); });
+    }).catch(function() { showLogin("Credenciales inválidas"); });
 }
 
-// Layout wrapper
-function shell(title, bodyHtml, currentTab) {
-    var tabs = {"dashboard":"📊 Dashboard","demos":"🎯 Demos","new":"➕ Nueva Demo"};
-    var nav = "<div class='sidebar'><h2>🌴 MPL Admin</h2>";
-    Object.keys(tabs).forEach(function(k) {
-        nav += "<a href='#"+k+"' class='"+(currentTab===k?"on":"")+"'>"+tabs[k]+"</a>";
-    });
-    nav += "<div style='margin-top:auto;padding-top:2rem'><a href='#' onclick='logout()'>🚪 Salir</a></div></div>";
-    document.getElementById("app").innerHTML =
-    "<div class='layout'>"+nav+"<div class='content'><h2>"+title+"</h2>"+bodyHtml+"</div></div>";
-    document.getElementById("app").style.display = "";
-}
-
-// Dashboard
+// ── Dashboard ─────────────────────────────────────────────────────────────────
 function showDash() {
-    api("/api/demos").then(function(demos) {
-        var counts = {};
-        demos.forEach(function(d) { counts[d.status] = (counts[d.status]||0)+1; });
-        var body = '<div class="stats">'+
-        '<div class="stat"><div class="stat-num">'+demos.length+'</div><div class="stat-lbl">Total</div></div>'+
-        '<div class="stat"><div class="stat-num">'+(counts.published||0)+'</div><div class="stat-lbl">Publicadas</div></div>'+
-        '<div class="stat"><div class="stat-num">'+(counts.contacted||0)+'</div><div class="stat-lbl">Contactadas</div></div>'+
-        '<div class="stat"><div class="stat-num">'+(counts.responded||0)+'</div><div class="stat-lbl">Respondidas</div></div>'+
-        '</div><h3>Últimas</h3>'+renderTable(demos.slice(0,10));
+    Promise.all([api("/api/demos"), api("/api/metrics/funnel")]).then(function(res) {
+        var demos = res[0], funnel = res[1];
+        var dCounts = {};
+        demos.forEach(function(d) { dCounts[d.status] = (dCounts[d.status] || 0) + 1; });
+        var totalProspects = Object.values(funnel).reduce(function(a,b){ return a+b; }, 0);
+        var body =
+            '<div class="stats">' +
+            '<div class="stat"><div class="stat-num">' + demos.length + '</div><div class="stat-lbl">Demos</div></div>' +
+            '<div class="stat"><div class="stat-num">' + (dCounts.published||0) + '</div><div class="stat-lbl">Publicadas</div></div>' +
+            '<div class="stat"><div class="stat-num">' + totalProspects + '</div><div class="stat-lbl">Prospects</div></div>' +
+            '<div class="stat"><div class="stat-num">' + (funnel.shortlisted||0) + '</div><div class="stat-lbl">Shortlisted</div></div>' +
+            '<div class="stat"><div class="stat-num">' + (funnel.won||0) + '</div><div class="stat-lbl">Cierres</div></div>' +
+            '</div>' +
+            '<h3 style="margin-bottom:.75rem">Últimas demos</h3>' + renderTable(demos.slice(0, 10));
         shell("Dashboard", body, "dashboard");
     });
 }
 
-// Demos list
+// ── Demos ─────────────────────────────────────────────────────────────────────
 function showDemos(filter) {
-    var url = "/api/demos" + (filter ? "?status="+filter : "");
+    var url = "/api/demos" + (filter ? "?status=" + filter : "");
     api(url).then(function(demos) {
         var fhtml = ["Todas","draft","published","contacted","archived"].map(function(s) {
-            return '<button class="btn btn-note" onclick="showDemos(\''+(s==="Todas"?"":s)+'\')">'+s+'</button>';
+            return '<button class="btn btn-note" onclick="showDemos(\'' + (s === "Todas" ? "" : s) + '\')">' + s + '</button>';
         }).join(" ");
-        shell("Demostraciones", "<p>"+fhtml+"</p>"+renderTable(demos), "demos");
+        shell("Demostraciones", "<p style='margin-bottom:1rem'>" + fhtml + "</p>" + renderTable(demos), "demos");
     });
 }
 
-function esc(s) {
-    return (s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-}
+function esc2(s) { return esc(s); }
 
 function renderTable(demos) {
     if (!demos.length) return "<p style='color:#666;margin-top:2rem'>No hay demos aún.</p>";
     var h = "<table><thead><tr><th>Demo</th><th>Negocio</th><th>Estado</th><th>Cat</th><th>Acciones</th></tr></thead><tbody>";
     demos.forEach(function(d) {
-        h += "<tr>"+
-        "<td><a href='#demo/"+esc(d.slug)+"' style='color:#4ade80;text-decoration:none'>"+esc(d.slug)+"</a></td>"+
-        "<td>"+esc(d.business_name||"")+"</td>"+
-        "<td><span class='badge b"+esc(d.status)+"'>"+esc(d.status)+"</span></td>"+
-        "<td>"+esc(d.category||"")+"</td>"+
-        "<td>";
-        if (d.status !== "published" && d.status !== "archived") h += "<button class='btn btn-pub' onclick='pub(\""+esc(d.slug)+"\")'>Publicar</button>";
-        if (d.status !== "archived") h += "<button class='btn btn-arc' onclick='arc(\""+esc(d.slug)+"\")'>Archivar</button>";
-        if (d.status === "archived") h += "<button class='btn btn-res' onclick='res(\""+esc(d.slug)+"\")'>Restaurar</button>";
-        h += "<button class='btn btn-del' onclick='del(\""+esc(d.slug)+"\")'>X</button>";
+        h += "<tr>" +
+            "<td><a href='#demo/" + esc(d.slug) + "' style='color:#4ade80;text-decoration:none'>" + esc(d.slug) + "</a></td>" +
+            "<td>" + esc(d.business_name || "") + "</td>" +
+            "<td><span class='badge b" + esc(d.status) + "'>" + esc(d.status) + "</span></td>" +
+            "<td>" + esc(d.category || "") + "</td>" +
+            "<td>";
+        if (d.status !== "published" && d.status !== "archived") h += "<button class='btn btn-pub' onclick='pub(\"" + esc(d.slug) + "\")'>Publicar</button>";
+        if (d.status !== "archived") h += "<button class='btn btn-arc' onclick='arc(\"" + esc(d.slug) + "\")'>Archivar</button>";
+        if (d.status === "archived") h += "<button class='btn btn-res' onclick='res(\"" + esc(d.slug) + "\")'>Restaurar</button>";
+        h += "<button class='btn btn-del' onclick='del(\"" + esc(d.slug) + "\")'>X</button>";
         h += "</td></tr>";
     });
     return h + "</tbody></table>";
 }
 
-// New demo
 function showNew() {
-    var body = '<div style="max-width:450px">'+
-    '<label>Slug</label><input id="ns" placeholder="miamiautodetailing">'+
-    '<label>Nombre del negocio</label><input id="nn" placeholder="Miami Auto Detailing">'+
-    '<label>Categoría</label><input id="nc" placeholder="auto, barberia, legal...">'+
-    '<button class="btn-big" onclick="createDemo()" style="margin-top:1rem">Crear Demo</button></div>';
+    var body = '<div style="max-width:450px">' +
+        '<label>Slug</label><input id="ns" placeholder="miamiautodetailing">' +
+        '<label>Nombre del negocio</label><input id="nn" placeholder="Miami Auto Detailing">' +
+        '<label>Categoría</label><input id="nc" placeholder="auto, barberia, legal...">' +
+        '<button class="btn-big" onclick="createDemo()" style="margin-top:1rem">Crear Demo</button></div>';
     shell("Nueva Demo", body, "new");
 }
 
@@ -195,44 +290,497 @@ function createDemo() {
     var c = document.getElementById("nc").value.trim();
     if (!s || !n) return alert("Slug y nombre requeridos");
     api("/api/demos", {method:"POST", body:{slug:s, business_name:n, category:c}}).then(function() {
-        toast("Demo creada!");
-        location.hash = "demos";
+        toast("Demo creada!"); location.hash = "demos";
     });
 }
 
-// Detail
 function showDetail(slug) {
-    api("/api/demos/"+slug).then(function(d) {
-        var body = '<div class="detail-grid">'+
-        '<div class="df"><label>Negocio</label><div>'+esc(d.business_name||"")+'</div></div>'+
-        '<div class="df"><label>Estado</label><div><span class="badge b'+esc(d.status)+'">'+esc(d.status)+'</span></div></div>'+
-        '<div class="df"><label>Categoría</label><div>'+esc(d.category||"")+'</div></div>'+
-        '<div class="df"><label>Subdominio</label><div><a href="https://'+esc(d.subdomain)+'" target="_blank" style="color:#4ade80">'+esc(d.subdomain)+'</a></div></div>'+
-        '<div class="df"><label>Creado</label><div>'+esc(d.created_at||"")+'</div></div>'+
-        '<div class="df"><label>Contactado</label><div>'+esc(d.contacted_at||"Nunca")+'</div></div>'+
-        '</div>'+
-        '<div style="margin:1rem 0">'+
-        (d.status!=="published"&&d.status!=="archived"?'<button class="btn btn-pub" onclick="pub(\''+esc(slug)+'\')">Publicar</button>':'')+
-        (d.status!=="archived"?'<button class="btn btn-arc" onclick="arc(\''+esc(slug)+'\')">Archivar</button>':'')+
-        (d.status==="archived"?'<button class="btn btn-res" onclick="res(\''+esc(slug)+'\')">Restaurar</button>':'')+
-        '<button class="btn btn-cta" onclick="markC(\''+esc(slug)+'\')">📧 Contactado</button>'+
-        '<button class="btn btn-note" onclick="addN(\''+esc(slug)+'\')">+ Nota</button>'+
-        '</div>'+
-        '<h3>Notas</h3><div class="notes-box">'+esc(d.notes||"Sin notas")+'</div>'+
-        '<h3>Archivos</h3><div class="notes-box">'+esc((d.files||[]).join("\\n")||"Vacío")+'</div>';
+    api("/api/demos/" + slug).then(function(d) {
+        var body =
+            '<div class="detail-grid">' +
+            dfRow("Negocio", esc(d.business_name||"")) +
+            dfRow("Estado", "<span class='badge b" + esc(d.status) + "'>" + esc(d.status) + "</span>") +
+            dfRow("Categoría", esc(d.category||"")) +
+            dfRow("Subdominio", '<a href="https://' + esc(d.subdomain) + '" target="_blank" style="color:#4ade80">' + esc(d.subdomain) + '</a>') +
+            dfRow("Creado", esc(d.created_at||"")) +
+            dfRow("Contactado", esc(d.contacted_at||"Nunca")) +
+            '</div>' +
+            '<div style="margin:1rem 0">' +
+            (d.status!=="published"&&d.status!=="archived"?'<button class="btn btn-pub" onclick="pub(\''+esc(slug)+'\')">Publicar</button>':'') +
+            (d.status!=="archived"?'<button class="btn btn-arc" onclick="arc(\''+esc(slug)+'\')">Archivar</button>':'') +
+            (d.status==="archived"?'<button class="btn btn-res" onclick="res(\''+esc(slug)+'\')">Restaurar</button>':'') +
+            '<button class="btn btn-cta" onclick="markC(\''+esc(slug)+'\')">📧 Contactado</button>' +
+            '<button class="btn btn-note" onclick="addN(\''+esc(slug)+'\')">+ Nota</button>' +
+            '</div>' +
+            '<h3 style="margin:.75rem 0 .4rem">Notas</h3><div class="notes-box">' + esc(d.notes||"Sin notas") + '</div>' +
+            '<h3 style="margin:.75rem 0 .4rem">Archivos</h3><div class="notes-box">' + esc((d.files||[]).join("\n")||"Vacío") + '</div>';
         shell(d.slug, body, "demos");
     });
 }
 
-// Actions
-function pub(s) { api("/api/demos/"+s+"/publish",{method:"POST"}).then(function(){toast("Publicada!");route();}); }
-function arc(s) { if(!confirm("Archivar "+s+"?"))return; api("/api/demos/"+s+"/archive",{method:"POST"}).then(function(){toast("Archivada!");route();}); }
-function res(s) { api("/api/demos/"+s+"/restore",{method:"POST"}).then(function(){toast("Restaurada!");route();}); }
-function del(s) { if(!confirm("Eliminar "+s+"?"))return; api("/api/demos/"+s,{method:"DELETE"}).then(function(){toast("Eliminada!");route();}); }
-function markC(s) { api("/api/demos/"+s+"/contacted",{method:"POST"}).then(function(){toast("Contactado!");route();}); }
-function addN(s) { var n=prompt("Nota:"); if(!n)return; api("/api/demos/"+s+"/notes",{method:"POST",body:{note:n}}).then(function(){toast("Nota!");route();}); }
+function pub(s)  { api("/api/demos/"+s+"/publish",{method:"POST"}).then(function(){toast("Publicada!");route();}); }
+function arc(s)  { if(!confirm("Archivar "+s+"?"))return; api("/api/demos/"+s+"/archive",{method:"POST"}).then(function(){toast("Archivada!");route();}); }
+function res(s)  { api("/api/demos/"+s+"/restore",{method:"POST"}).then(function(){toast("Restaurada!");route();}); }
+function del(s)  { if(!confirm("Eliminar "+s+"?"))return; api("/api/demos/"+s,{method:"DELETE"}).then(function(){toast("Eliminada!");route();}); }
+function markC(s){ api("/api/demos/"+s+"/contacted",{method:"POST"}).then(function(){toast("Contactado!");route();}); }
+function addN(s) { var n=prompt("Nota:"); if(!n)return; api("/api/demos/"+s+"/notes",{method:"POST",body:{note:n}}).then(function(){toast("Nota guardada!");route();}); }
 
-// Init
+// ── Prospects: list ───────────────────────────────────────────────────────────
+function showProspects(params) {
+    clearInterval(prospectsTimer);
+    var p = params || {};
+
+    var filterHtml =
+        '<div class="filter-bar">' +
+        '<select id="f-vertical">' +
+        '<option value="">Todos los verticales</option>' +
+        '<option value="belleza"' + (p.vertical==="belleza"?" selected":"") + '>Belleza</option>' +
+        '<option value="hogar"'  + (p.vertical==="hogar"  ?" selected":"") + '>Hogar</option>'   +
+        '</select>' +
+        '<select id="f-status">' +
+        '<option value="">Todos los estados</option>' +
+        ["discovered","reviewed","shortlisted","demo_built","contacted","responded","no_response","won","lost","rejected","blacklisted"].map(function(s) {
+            return '<option value="'+s+'"'+(p.status===s?" selected":"")+'>'+s+'</option>';
+        }).join("") +
+        '</select>' +
+        '<input type="number" id="f-score" placeholder="Score mín" min="0" max="100" style="width:90px" value="'+(p.score_min||"")+'">' +
+        '<input type="text"   id="f-city"  placeholder="Ciudad"    style="width:110px" value="'+(p.city||"")+'">' +
+        '<button onclick="applyFilters()">Filtrar</button>' +
+        '</div>';
+
+    var qs = buildQS(p);
+    api("/api/prospects?" + qs).then(function(data) {
+        shell("Prospects",
+            filterHtml + '<div id="prospects-table-wrapper">' + renderProspectsTable(data) + '</div>',
+            "prospects");
+        prospectsTimer = setInterval(function() { silentRefresh(); }, 30000);
+    });
+}
+
+function buildQS(p) {
+    var qs = ["order_by=score_desc","limit=100"];
+    if (p.vertical)  qs.push("vertical="  + encodeURIComponent(p.vertical));
+    if (p.status)    qs.push("status="    + encodeURIComponent(p.status));
+    if (p.score_min) qs.push("score_min=" + p.score_min);
+    if (p.city)      qs.push("city="      + encodeURIComponent(p.city));
+    return qs.join("&");
+}
+
+function applyFilters() {
+    var v  = document.getElementById("f-vertical");
+    var s  = document.getElementById("f-status");
+    var sc = document.getElementById("f-score");
+    var c  = document.getElementById("f-city");
+    if (!v) return;
+    var params = {};
+    if (v.value)  params.vertical  = v.value;
+    if (s.value)  params.status    = s.value;
+    if (sc.value) params.score_min = sc.value;
+    if (c.value)  params.city      = c.value;
+    showProspects(params);
+}
+
+function silentRefresh() {
+    var wrapper = document.getElementById("prospects-table-wrapper");
+    if (!wrapper) { clearInterval(prospectsTimer); return; }
+    var v  = document.getElementById("f-vertical");
+    var s  = document.getElementById("f-status");
+    var sc = document.getElementById("f-score");
+    var c  = document.getElementById("f-city");
+    if (!v) { clearInterval(prospectsTimer); return; }
+    var params = {};
+    if (v.value)  params.vertical  = v.value;
+    if (s.value)  params.status    = s.value;
+    if (sc.value) params.score_min = sc.value;
+    if (c.value)  params.city      = c.value;
+    api("/api/prospects?" + buildQS(params)).then(function(data) {
+        var w = document.getElementById("prospects-table-wrapper");
+        if (w) w.innerHTML = renderProspectsTable(data);
+    });
+}
+
+function renderProspectsTable(prospects) {
+    if (!prospects.length) return (
+        '<div style="text-align:center;padding:3rem 1rem;color:#555">' +
+        '<p style="font-size:1.1rem;margin-bottom:.5rem">Sin prospects todavía.</p>' +
+        '<p style="font-size:.85rem">El agente no se ha ejecutado aún. Corré una sesión manual o esperá al cron de las 7 AM.</p>' +
+        '</div>'
+    );
+
+    var h = '<table><thead><tr>' +
+        '<th>Negocio</th><th>Ciudad</th><th>Rating</th><th>Score</th>' +
+        '<th>Estado</th><th>Actualizado</th><th>Acciones</th>' +
+        '</tr></thead><tbody>';
+
+    prospects.forEach(function(p) {
+        var nexts    = TRANSITIONS[p.status] || [];
+        var ratingStr = p.google_rating
+            ? "★ " + p.google_rating + " <small style='color:#555'>(" + (p.google_review_count||0) + ")</small>"
+            : '<span style="color:#333">–</span>';
+        var updStr   = (p.updated_at||"").slice(0,10) || "–";
+        var kitBtn   = p.context_level >= 1
+            ? '<button class="btn btn-pub" onclick="downloadKit('+p.id+')" title="Descargar kit de contexto">⬇ Kit</button>'
+            : '<button class="btn" style="background:#1a1a1a;color:#333;cursor:default" title="Sin contexto aún">⬇ Kit</button>';
+
+        var statusSelect = nexts.length
+            ? '<select onchange="quickStatus('+p.id+',this)" title="Cambiar status" '+
+              'style="background:#0d0d0d;color:#e5e5e5;border:1px solid #2a2a2a;border-radius:4px;font-size:.72rem;padding:.2rem .3rem;max-width:110px">' +
+              '<option value="">Status…</option>' +
+              nexts.map(function(ns){ return '<option value="'+ns+'">→ '+ns+'</option>'; }).join("") +
+              '</select> '
+            : '';
+
+        h += '<tr>' +
+            '<td><strong>' + esc(p.business_name) + '</strong>' +
+            '<br><small style="color:#555">' + esc(p.vertical) + (p.category_detail ? ' · ' + esc(p.category_detail) : '') + '</small></td>' +
+            '<td>' + esc(p.city||"–") + '</td>' +
+            '<td>' + ratingStr + '</td>' +
+            '<td>' + pScore(p.opportunity_score) + '</td>' +
+            '<td><span class="badge b' + esc(p.status) + '">' + esc(p.status) + '</span></td>' +
+            '<td style="color:#555">' + esc(updStr) + '</td>' +
+            '<td style="white-space:nowrap">' +
+            '<button class="btn btn-res" onclick="openProspectModal(' + p.id + ')">Ver</button> ' +
+            statusSelect +
+            '<button class="btn btn-note" onclick="quickAssign(' + p.id + ')">Asignar</button> ' +
+            kitBtn +
+            '</td></tr>';
+    });
+
+    return h + '</tbody></table>';
+}
+
+// ── Prospects: quick actions (from table) ─────────────────────────────────────
+function quickStatus(id, sel) {
+    var newStatus = sel.value;
+    if (!newStatus) return;
+    api("/api/prospects/" + id, {method:"PATCH", body:{status: newStatus}}).then(function() {
+        toast("Status → " + newStatus);
+        silentRefresh();
+        sel.value = "";
+    }).catch(function(r) {
+        sel.value = "";
+        (r.json ? r.json().then(function(d){ toast("Error: " + (d.detail||"?")); }) : Promise.resolve()).catch(function(){});
+        toast("Error al cambiar status");
+    });
+}
+
+function quickAssign(id) {
+    var who = prompt("Asignar a (rey / amigo):");
+    if (!who) return;
+    api("/api/prospects/" + id, {method:"PATCH", body:{assigned_to: who}}).then(function() {
+        toast("Asignado a " + who);
+        silentRefresh();
+    });
+}
+
+function downloadKit(id) {
+    toast("Descarga de kit disponible en Bloque 16 (pendiente)");
+}
+
+// ── Prospects: modal ──────────────────────────────────────────────────────────
+function openProspectModal(id) {
+    Promise.all([
+        api("/api/prospects/" + id),
+        api("/api/prospects/" + id + "/touchpoints")
+    ]).then(function(res) {
+        renderProspectModal(res[0], res[1]);
+    });
+}
+
+function renderProspectModal(p, touchpoints) {
+    // Score breakdown
+    var breakdown = "";
+    if (p.score_breakdown_json) {
+        try {
+            var bd = JSON.parse(p.score_breakdown_json);
+            breakdown = Object.entries(bd).map(function(e) {
+                var color = Number(e[1]) > 0 ? "#4ade80" : "#f87171";
+                return '<span style="font-size:.75rem;color:' + color + ';margin-right:.4rem">' +
+                    esc(e[0]) + ': ' + (Number(e[1]) > 0 ? "+" : "") + e[1] + '</span>';
+            }).join("");
+        } catch(ex) {}
+    }
+
+    var nexts = TRANSITIONS[p.status] || [];
+    var statusOpts = nexts.map(function(s) {
+        return '<option value="' + s + '">→ ' + s + '</option>';
+    }).join("");
+
+    // Touchpoints list
+    var tpHtml = touchpoints.length
+        ? touchpoints.map(function(t) {
+            return '<div style="border-left:3px solid #222;padding:.5rem .75rem;margin-bottom:.4rem">' +
+                '<div style="font-size:.72rem;color:#555">' +
+                esc((t.occurred_at||"").slice(0,16)) + ' · ' + esc(t.channel) +
+                ' (' + esc(t.direction) + ')' + (t.actor ? ' · <strong style="color:#888">' + esc(t.actor) + '</strong>' : '') +
+                '</div>' +
+                (t.summary ? '<div style="margin:.2rem 0;font-size:.85rem">' + esc(t.summary) + '</div>' : '') +
+                (t.next_action ? '<div style="font-size:.78rem;color:#fbbf24">→ ' + esc(t.next_action) +
+                    (t.next_action_at ? ' <span style="color:#555">(' + esc((t.next_action_at||"").slice(0,10)) + ')</span>' : '') + '</div>' : '') +
+                '</div>';
+          }).join("")
+        : '<p style="color:#555;font-size:.85rem">Sin touchpoints aún.</p>';
+
+    // Score color
+    var scoreColor = p.opportunity_score >= 75 ? "#4ade80" : p.opportunity_score >= 50 ? "#fbbf24" : "#6b7280";
+
+    var html =
+        '<div class="modal-overlay" id="modal-overlay" onclick="closeModalIf(event)">' +
+        '<div class="modal-box">' +
+        '<button class="modal-close" onclick="closeModal()">✕</button>' +
+
+        // Header
+        '<div style="margin-bottom:1.25rem;padding-right:2rem">' +
+        '<h2 style="color:#4ade80;font-size:1.4rem">' + esc(p.business_name) + '</h2>' +
+        '<div style="color:#666;font-size:.82rem;margin-top:.2rem">' +
+        esc(p.vertical) + (p.category_detail ? ' · ' + esc(p.category_detail) : '') +
+        (p.city ? ' · ' + esc(p.city) : '') +
+        (p.assigned_to ? ' · <span style="color:#fbbf24">@' + esc(p.assigned_to) + '</span>' : '') +
+        '</div>' +
+        '</div>' +
+
+        // Info grid
+        '<div class="detail-grid">' +
+        dfRow("Dirección", esc(p.address||"–")) +
+        dfRow("Teléfono",  esc(p.phone||"–")) +
+        dfRow("Website",   p.website_url
+            ? '<a href="' + esc(p.website_url) + '" target="_blank" style="color:#4ade80">' + esc(p.website_url.slice(0,45)) + (p.website_url.length>45?"…":"") + '</a>'
+            : '<span style="color:#555">Sin web</span>') +
+        dfRow("Instagram", p.instagram_handle ? '<span style="color:#e879f9">@' + esc(p.instagram_handle) + '</span>' : '<span style="color:#555">–</span>') +
+        dfRow("Email",     esc(p.email||"–")) +
+        dfRow("WhatsApp",  p.has_whatsapp ? '<span style="color:#4ade80">✓ Sí</span>' : '<span style="color:#555">–</span>') +
+        '</div>' +
+
+        // Métricas chips
+        '<h3 style="margin:.75rem 0 .4rem;font-size:.9rem;color:#a3a3a3;text-transform:uppercase;letter-spacing:.06em">Métricas</h3>' +
+        '<div class="chip-row">' +
+        chip("Google",   p.google_rating ? "★ " + p.google_rating + " (" + (p.google_review_count||0) + ")" : "–") +
+        chip("Yelp",     p.yelp_rating   ? "★ " + p.yelp_rating   + " (" + (p.yelp_review_count||0)   + ")" : "–") +
+        chip("Web",      p.website_quality_score !== null && p.website_quality_score !== undefined ? p.website_quality_score + "/100" : "–") +
+        chip("Booking",  boolStr(p.has_online_booking)) +
+        chip("Mobile",   boolStr(p.mobile_friendly)) +
+        chip("HTTPS",    boolStr(p.https)) +
+        '</div>' +
+
+        // Score
+        '<div style="display:flex;align-items:center;gap:1.25rem;margin:1rem 0;padding:.75rem;background:#0a0a0a;border-radius:8px">' +
+        '<div style="font-size:2.8rem;font-weight:800;color:' + scoreColor + ';line-height:1">' +
+        (p.opportunity_score !== null && p.opportunity_score !== undefined ? p.opportunity_score : "–") + '</div>' +
+        '<div style="flex:1">' +
+        '<div style="font-size:.72rem;color:#555;margin-bottom:.3rem;text-transform:uppercase">Score de oportunidad</div>' +
+        (breakdown ? '<div>' + breakdown + '</div>' : '<div style="color:#333;font-size:.8rem">Sin breakdown disponible</div>') +
+        '</div></div>' +
+
+        // Propuesta de valor
+        (p.proposed_value
+            ? '<div style="background:#071a09;border-left:3px solid #4ade80;padding:.7rem 1rem;border-radius:0 8px 8px 0;margin:.75rem 0;font-size:.88rem">' +
+              '<div style="font-size:.68rem;color:#4ade80;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.2rem">Propuesta de valor</div>' +
+              esc(p.proposed_value) + '</div>'
+            : '') +
+
+        // Notes
+        (p.notes
+            ? '<h3 style="margin:.75rem 0 .3rem;font-size:.85rem;color:#666">Notas</h3><div class="notes-box">' + esc(p.notes) + '</div>'
+            : '') +
+
+        // Status actions
+        '<div style="margin:1rem 0;padding:.75rem;background:#0a0a0a;border-radius:8px">' +
+        '<div style="font-size:.72rem;color:#555;text-transform:uppercase;margin-bottom:.5rem">Acciones</div>' +
+        '<div style="display:flex;gap:.5rem;flex-wrap:wrap;align-items:center">' +
+        (nexts.length
+            ? '<select id="modal-status-sel" style="background:#111;color:#e5e5e5;border:1px solid #4ade80;border-radius:6px;padding:.38rem .7rem;font-size:.82rem">' +
+              '<option value="">Cambiar status…</option>' + statusOpts + '</select>' +
+              '<button class="btn btn-pub" onclick="modalChangeStatus(' + p.id + ')">Aplicar</button>'
+            : '<span style="color:#555;font-size:.82rem">Sin transiciones disponibles desde "' + esc(p.status) + '"</span>') +
+        ' <button class="btn btn-note" onclick="modalQuickAssign(' + p.id + ')">Asignar</button>' +
+        (p.status !== "blacklisted"
+            ? ' <button class="btn btn-del" onclick="modalBlacklist(' + p.id + ')">Blacklist</button>'
+            : '') +
+        '</div></div>' +
+
+        // Touchpoints
+        '<h3 style="margin:1rem 0 .5rem;font-size:.9rem;color:#a3a3a3;text-transform:uppercase;letter-spacing:.06em">Touchpoints</h3>' +
+        tpHtml +
+
+        // Add touchpoint
+        '<div style="margin-top:.75rem;padding:.75rem;background:#0a0a0a;border-radius:8px">' +
+        '<div style="font-size:.75rem;color:#555;margin-bottom:.5rem;text-transform:uppercase">+ Nuevo touchpoint</div>' +
+        '<div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.4rem">' +
+        '<select id="tp-channel" style="background:#111;color:#e5e5e5;border:1px solid #2a2a2a;border-radius:6px;padding:.3rem;font-size:.78rem">' +
+        '<option value="whatsapp">WhatsApp</option>' +
+        '<option value="instagram_dm">Instagram DM</option>' +
+        '<option value="email">Email</option>' +
+        '<option value="call">Llamada</option>' +
+        '<option value="walk_in">Walk-in</option>' +
+        '</select>' +
+        '<select id="tp-direction" style="background:#111;color:#e5e5e5;border:1px solid #2a2a2a;border-radius:6px;padding:.3rem;font-size:.78rem">' +
+        '<option value="outbound">Saliente</option>' +
+        '<option value="inbound">Entrante</option>' +
+        '</select>' +
+        '<input id="tp-actor" placeholder="Quién (rey / amigo)" ' +
+        'style="background:#111;border:1px solid #2a2a2a;color:#e5e5e5;border-radius:6px;padding:.3rem;font-size:.78rem;width:140px">' +
+        '</div>' +
+        '<input id="tp-summary" placeholder="Resumen del contacto *" ' +
+        'style="width:100%;background:#111;border:1px solid #2a2a2a;color:#e5e5e5;border-radius:6px;padding:.35rem;font-size:.8rem;margin-bottom:.35rem">' +
+        '<input id="tp-next" placeholder="Próxima acción (opcional)" ' +
+        'style="width:100%;background:#111;border:1px solid #2a2a2a;color:#e5e5e5;border-radius:6px;padding:.35rem;font-size:.8rem;margin-bottom:.5rem">' +
+        '<button class="btn btn-pub" onclick="saveTouchpoint(' + p.id + ')">Guardar</button>' +
+        '</div>' +
+
+        '</div></div>';
+
+    var existing = document.getElementById("modal-overlay");
+    if (existing) existing.remove();
+    document.body.insertAdjacentHTML("beforeend", html);
+    document.getElementById("modal-overlay").style.display = "block";
+}
+
+function closeModal() {
+    var el = document.getElementById("modal-overlay");
+    if (el) { el.style.display = "none"; el.remove(); }
+}
+
+function closeModalIf(e) {
+    if (e.target && e.target.id === "modal-overlay") closeModal();
+}
+
+function modalChangeStatus(id) {
+    var sel = document.getElementById("modal-status-sel");
+    var newStatus = sel ? sel.value : "";
+    if (!newStatus) return;
+    api("/api/prospects/" + id, {method:"PATCH", body:{status: newStatus}}).then(function() {
+        toast("Status → " + newStatus);
+        openProspectModal(id);
+        silentRefresh();
+    }).catch(function(r) {
+        r.json ? r.json().then(function(d){ alert("Error: " + (d.detail||"?")); }) : alert("Error al cambiar status");
+    });
+}
+
+function modalQuickAssign(id) {
+    var who = prompt("Asignar a (rey / amigo):");
+    if (!who) return;
+    api("/api/prospects/" + id, {method:"PATCH", body:{assigned_to: who}}).then(function() {
+        toast("Asignado a " + who);
+        openProspectModal(id);
+        silentRefresh();
+    });
+}
+
+function modalBlacklist(id) {
+    var reason = prompt("Motivo del blacklist (opcional):");
+    if (reason === null) return;
+    api("/api/prospects/" + id + "/blacklist", {method:"POST", body:{reason: reason}}).then(function() {
+        toast("Blacklisteado");
+        closeModal();
+        silentRefresh();
+    });
+}
+
+function saveTouchpoint(id) {
+    var channel   = document.getElementById("tp-channel").value;
+    var direction = document.getElementById("tp-direction").value;
+    var summary   = (document.getElementById("tp-summary").value||"").trim();
+    var next      = (document.getElementById("tp-next").value||"").trim();
+    var actor     = (document.getElementById("tp-actor").value||"").trim();
+    if (!summary) { alert("El resumen es requerido"); return; }
+    api("/api/prospects/" + id + "/touchpoints", {
+        method: "POST",
+        body: {
+            channel:     channel,
+            direction:   direction,
+            summary:     summary,
+            next_action: next || null,
+            actor:       actor || null
+        }
+    }).then(function() {
+        toast("Touchpoint guardado");
+        openProspectModal(id);
+    });
+}
+
+// ── Research Runs ─────────────────────────────────────────────────────────────
+function showRuns() {
+    api("/api/research_runs?limit=30").then(function(runs) {
+        if (!runs.length) {
+            shell("Research Runs",
+                '<p style="color:#555;margin-top:2rem">No hay runs todavía. El agente no se ha ejecutado aún.</p>',
+                "runs");
+            return;
+        }
+        var h = '<table><thead><tr>' +
+            '<th>#</th><th>Fecha</th><th>Vertical</th><th>Geo</th>' +
+            '<th>Vistos</th><th>Nuevos</th><th>Actualizados</th><th>Costo $</th><th>Status</th>' +
+            '</tr></thead><tbody>';
+        runs.forEach(function(r) {
+            var sc = r.status === "success" ? "#4ade80" : r.status === "failed" ? "#f87171" : "#555";
+            h += '<tr>' +
+                '<td style="color:#555">' + r.id + '</td>' +
+                '<td>' + esc((r.started_at||"").slice(0,16)) + '</td>' +
+                '<td>' + esc(r.vertical) + '</td>' +
+                '<td>' + esc(r.geo) + '</td>' +
+                '<td>' + (r.candidates_seen||0) + '</td>' +
+                '<td style="color:#4ade80">' + (r.new_prospects||0) + '</td>' +
+                '<td style="color:#60a5fa">' + (r.updated_prospects||0) + '</td>' +
+                '<td style="color:#fbbf24">' + (r.api_cost_usd ? "$"+r.api_cost_usd.toFixed(4) : "–") + '</td>' +
+                '<td style="color:' + sc + '">' + esc(r.status||"–") + '</td>' +
+                '</tr>';
+        });
+        shell("Research Runs", h + '</tbody></table>', "runs");
+    });
+}
+
+// ── Métricas ──────────────────────────────────────────────────────────────────
+function showMetrics() {
+    Promise.all([api("/api/metrics/funnel"), api("/api/metrics/daily?limit=30")]).then(function(res) {
+        var funnel = res[0];
+        var daily  = res[1] || [];
+
+        var statusLabels = {
+            discovered: "Descubiertos", reviewed: "Revisados", shortlisted: "Shortlisted",
+            demo_built: "Demo lista",   contacted: "Contactados", responded: "Respondidos",
+            no_response: "Sin resp.",   won: "Cierres", lost: "Perdidos",
+            rejected: "Rechazados",     blacklisted: "Blacklist"
+        };
+
+        var cards = Object.entries(funnel).map(function(e) {
+            var cls = e[1] === 0 ? "metric-card mc-zero" : "metric-card";
+            return '<div class="' + cls + '"><div class="mc-num">' + e[1] + '</div>' +
+                '<div class="mc-lbl">' + esc(statusLabels[e[0]] || e[0]) + '</div></div>';
+        }).join("");
+
+        var dailyTable = daily.length
+            ? '<h3 style="margin:1.5rem 0 .75rem">Métricas diarias</h3>' +
+              '<table><thead><tr>' +
+              '<th>Día</th><th>Prospects</th><th>Shortlisted</th><th>Demos</th><th>Mostradas</th><th>Cierres</th><th>Revenue</th><th>API $</th>' +
+              '</tr></thead><tbody>' +
+              daily.map(function(d) {
+                  return '<tr>' +
+                      '<td>' + esc(d.day) + '</td>' +
+                      '<td>' + (d.prospects_new||0) + '</td>' +
+                      '<td>' + (d.prospects_shortlisted||0) + '</td>' +
+                      '<td>' + (d.demos_built||0) + '</td>' +
+                      '<td>' + (d.demos_shown||0) + '</td>' +
+                      '<td style="color:#4ade80">' + (d.closes||0) + '</td>' +
+                      '<td style="color:#4ade80">' + (d.revenue_usd ? "$"+d.revenue_usd.toFixed(2) : "–") + '</td>' +
+                      '<td style="color:#fbbf24">' + (d.api_spend_usd ? "$"+d.api_spend_usd.toFixed(4) : "–") + '</td>' +
+                      '</tr>';
+              }).join("") + '</tbody></table>'
+            : '<p style="color:#555;font-size:.85rem;margin-top:1rem">Las métricas diarias se poblarán cuando el agente empiece a correr.</p>';
+
+        shell("Métricas",
+            '<h3 style="margin-bottom:.75rem">Funnel de Prospects</h3>' +
+            '<div class="metric-cards">' + cards + '</div>' +
+            dailyTable,
+            "metrics");
+    });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeModal();
+});
+
 window.onhashchange = route;
 route();
 </script>
