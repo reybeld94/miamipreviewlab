@@ -10,12 +10,12 @@
 | 3 | API non-root + main.py hardening | ✅ Completo (sin cambio de user) |
 | 4 | Git repo + DB backups | ✅ Completo |
 | 5 | Schema nuevo (prospects, runs, touchpoints, metrics) | ✅ Completo |
-| 6 | API endpoints de prospects | 🔲 Pendiente — **PRÓXIMO** |
-| 7 | Admin UI — vista de Prospects | 🔲 Pendiente |
+| 6 | API endpoints de prospects | ✅ Completo |
+| 7 | Admin UI — vista de Prospects | 🔲 Pendiente — **PRÓXIMO** |
 | 8 | Scaffold del agente + budget guard | 🔲 Pendiente |
 | 9–17 | Skills, scoring, orchestrator, UI dashboard... | 🔲 Pendiente |
 
-### Para retomar: decile a Claude Code "leé CLAUDE.md y continuamos con el Bloque 6"
+### Para retomar: decile a Claude Code "leé CLAUDE.md y continuamos con el Bloque 7"
 
 Estás trabajando en el VPS de Miami Preview Lab (MPL), una agencia digital part-time que vende web+IA a pequeños negocios del sur de Florida. Idioma de operación: **español**.
 
