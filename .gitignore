@@ -18,3 +18,4 @@ demos/*/
 *.bak.*
 *.log
 /var/log/mpl/
+.claude/
