@@ -1,0 +1,49 @@
+verticals:
+  belleza:
+    aliases: [barberia, salon, salon_unas, spa, estetica, nail_salon]
+    gmaps_types: [hair_care, beauty_salon, spa]
+    gmaps_keywords:
+      - barberia
+      - barber shop
+      - salon de uñas
+      - nail salon
+      - hair salon
+      - spa
+    yelp_categories: [barbers, hair, nailsalons, spas]
+    ig_hashtags: [barberiamiami, salonmiami, nailsmiami, beautymiami]
+
+  hogar:
+    aliases: [plomero, electricista, ac, handyman, jardineria, landscaping]
+    gmaps_types: [plumber, electrician, general_contractor, roofing_contractor]
+    gmaps_keywords:
+      - plumber
+      - plomeria
+      - AC repair
+      - handyman
+      - jardinero
+      - lawn care
+      - electricista
+    yelp_categories: [plumbing, electricians, handyman, hvac, landscaping]
+    ig_hashtags: [plomeriaminami, handymanmiami, landscapingmiami]
+
+geos:
+  hialeah:
+    center: { lat: 25.8576, lng: -80.2781 }
+    radius_m: 8000
+    city_label: Hialeah
+  pembroke_pines:
+    center: { lat: 26.0078, lng: -80.2962 }
+    radius_m: 8000
+    city_label: Pembroke Pines
+  miramar:
+    center: { lat: 25.9870, lng: -80.3323 }
+    radius_m: 8000
+    city_label: Miramar
+  hallandale:
+    center: { lat: 25.9812, lng: -80.1484 }
+    radius_m: 5000
+    city_label: Hallandale Beach
+  miami_lakes:
+    center: { lat: 25.9087, lng: -80.3023 }
+    radius_m: 5000
+    city_label: Miami Lakes

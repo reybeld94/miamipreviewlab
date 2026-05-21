@@ -1,0 +1,33 @@
+google_places:
+  endpoint: https://places.googleapis.com/v1/places:searchNearby
+  detail_endpoint: https://places.googleapis.com/v1/places/{place_id}
+  max_results_per_call: 20
+  # Field mask for search
+  search_field_mask: >
+    places.id,places.displayName,places.formattedAddress,places.location,
+    places.types,places.rating,places.userRatingCount,places.websiteUri,
+    places.nationalPhoneNumber,places.googleMapsUri,places.businessStatus
+  # Field mask for detail
+  detail_field_mask: >
+    id,displayName,formattedAddress,websiteUri,nationalPhoneNumber,
+    internationalPhoneNumber,regularOpeningHours,photos,rating,
+    userRatingCount,reviews,types,businessStatus
+  # Cost estimate: $0.017 per Nearby Search call (20 results)
+  cost_per_call_usd: 0.017
+
+yelp:
+  endpoint: https://api.yelp.com/v3/businesses/search
+  max_results_per_call: 50
+  # Free tier: 500 calls/day
+  cost_per_call_usd: 0.0
+
+apify:
+  instagram_scraper_actor: apify/instagram-scraper
+  instagram_profile_actor: apify/instagram-profile-scraper
+  # Cost estimate: ~$0.004 per 1000 results
+  cost_per_run_usd: 0.05
+
+anthropic:
+  # Haiku pricing (per million tokens)
+  haiku_input_cost_per_m:  0.80
+  haiku_output_cost_per_m: 4.00

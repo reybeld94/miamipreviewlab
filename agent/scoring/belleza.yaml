@@ -1,0 +1,36 @@
+vertical: belleza
+threshold_shortlist: 75
+threshold_skip: 30
+
+weights:
+  # Presencia web — oportunidad mayor si no tiene o tiene web mala
+  no_website:          40
+  has_website:        -25
+  bad_website_quality: 30   # website_quality_score < 50
+  good_website_quality: -20  # website_quality_score > 80
+
+  # Booking online — si ya tiene, oportunidad menor
+  has_online_booking: -40
+  no_online_booking:   20
+
+  # Señales de negocio activo y con demanda
+  good_rating_high_volume: 20   # rating >= 4.0 y reviews >= 30
+  low_review_count:       -15   # reviews < 5 (puede estar inactivo)
+  very_high_reviews:       10   # reviews >= 100
+
+  # Instagram activo (post últimos 14 días)
+  ig_active:  15
+  ig_missing: -5
+
+hard_skip_rules:
+  - field: business_status
+    equals: CLOSED_PERMANENTLY
+  - field: google_review_count
+    less_than: 3
+  - field: business_name
+    matches_any:
+      - supercuts
+      - great clips
+      - sport clips
+      - fantastic sams
+      - regis salon

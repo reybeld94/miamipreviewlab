@@ -1,0 +1,36 @@
+vertical: hogar
+threshold_shortlist: 70
+threshold_skip: 25
+
+weights:
+  # Presencia web
+  no_website:          45
+  has_website:        -20
+  bad_website_quality: 25   # website_quality_score < 50
+  good_website_quality: -15  # website_quality_score > 80
+
+  # Contacto digital
+  has_whatsapp:        15
+  no_whatsapp:          0
+
+  # Señales de demanda
+  good_rating_high_volume: 20   # rating >= 4.0 y reviews >= 20
+  low_review_count:       -10   # reviews < 3
+  very_high_reviews:        5   # reviews >= 50
+
+  # Booking / cotización online
+  has_online_booking: -30
+  no_online_booking:   15
+
+hard_skip_rules:
+  - field: business_status
+    equals: CLOSED_PERMANENTLY
+  - field: google_review_count
+    less_than: 2
+  - field: business_name
+    matches_any:
+      - home depot
+      - lowes
+      - ace hardware
+      - roto-rooter
+      - service master
