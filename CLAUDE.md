@@ -1,5 +1,22 @@
 # Miami Preview Lab — Contexto técnico
 
+## Estado de implementación (actualizado 2026-05-21)
+
+| Bloque | Título | Estado |
+|--------|--------|--------|
+| 0 | Setup inicial y CLAUDE.md | ✅ Completo |
+| 1 | SSH hardening A (users + keys) | ⏭ Salteado (root por ahora) |
+| 2 | SSH hardening B (lockdown) | ⏭ Salteado (root por ahora) |
+| 3 | API non-root + main.py hardening | ✅ Completo (sin cambio de user) |
+| 4 | Git repo + DB backups | ✅ Completo |
+| 5 | Schema nuevo (prospects, runs, touchpoints, metrics) | ✅ Completo |
+| 6 | API endpoints de prospects | 🔲 Pendiente — **PRÓXIMO** |
+| 7 | Admin UI — vista de Prospects | 🔲 Pendiente |
+| 8 | Scaffold del agente + budget guard | 🔲 Pendiente |
+| 9–17 | Skills, scoring, orchestrator, UI dashboard... | 🔲 Pendiente |
+
+### Para retomar: decile a Claude Code "leé CLAUDE.md y continuamos con el Bloque 6"
+
 Estás trabajando en el VPS de Miami Preview Lab (MPL), una agencia digital part-time que vende web+IA a pequeños negocios del sur de Florida. Idioma de operación: **español**.
 
 ## Stack actual (Ubuntu 24.04, IP 74.208.247.168)
